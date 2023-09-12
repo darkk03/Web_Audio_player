@@ -4,8 +4,7 @@ body {
   display: flex;
   min-height: 100vh;
   font-family: "Roboto", sans-serif;
-  color: #8D8D8D;
-  background: #07386b;
+  background: linear-gradient(180deg, #6192c4 0%, #07386b 100%);
 }
 
 .music-player {
@@ -41,19 +40,6 @@ body {
   height: auto;
   border-radius: 4px;
 }
-.main-current .current-keyvisual:before {
-  content: "";
-  display: block;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  z-index: 1;
-  width: 95%;
-  height: 80%;
-  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/329679/music-player-freebie-photo.png);
-  background-size: cover;
-  filter: blur(35px);
-}
 .main-current .current-info {
   display: inline-block;
   padding: 15px 0 0 24px;
@@ -67,11 +53,9 @@ body {
 .main-current .current-info h1 {
   margin-bottom: 13px;
   font-size: 20px;
-  color: #26107B;
 }
 .main-current .current-info p {
   font-size: 12px;
-  color: #26107B;
 }
 
 .main-control {
@@ -94,17 +78,12 @@ body {
 }
 .main-control .btn._previous {
   margin-right: 17px;
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/329679/music-player-freebie-previous.svg");
-  background-size: auto 80%;
 }
 .main-control .btn._pause {
   margin-right: 17px;
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/329679/music-player-freebie-pause.svg");
 }
 .main-control .btn._next {
-  margin-right: 24px;
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/329679/music-player-freebie-next.svg");
-  background-size: auto 80%;
+  margin-right: 17px;
 }
 
 .player-list {
@@ -133,12 +112,10 @@ body {
 .player-list li .list-info.list-info .info-title {
   margin-bottom: 3px;
   font-size: 12px;
-  color: #8D8D8D;
 }
 .player-list li .list-cover.list-info .info-artist,
 .player-list li .list-info.list-info .info-artist {
   font-size: 10px;
-  color: #cdcdcd;
 }
 .player-list li:last-child {
   margin-bottom: 0;
