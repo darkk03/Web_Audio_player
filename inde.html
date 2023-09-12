@@ -4,80 +4,81 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your best audio player</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
+    <title>audio player</title>
 
     <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
-    <div class="root">
-      <h1>Music Player</h1>
-
-      <main class="app">
-        <div class="content">
-          <div class="handling">
-            <div class="handling-sound" title="Volume">
-              <svg class="icon-sound">
-                <use xlink:href="images/sprite.svg#sound"></use>
-              </svg>
-
-              <div class="volume">
-                <input
-                  min="0"
-                  max="1"
-                  step="0.1"
-                  type="range"
-                  name="volume"
-                  value="0.5"
-                  class="controls-volume"
-                />
-              </div>
+    <div class="music-player">
+        <div class="player-main">
+          <div class="main-current">
+            <div class="current-keyvisual">
+              <img src="images/beat1.jpg" />
             </div>
-
-            <div class="handling-repeat" title="Repeat">
-              <svg class="icon-repeat">
-                <use xlink:href="images/sprite.svg#repeat"></use>
-              </svg>
+            <div class="current-info">
+              <h1>Blame</h1>
+              <p>KYLE</p>
             </div>
-              <div class="handling-arrow" title="arrow">
-                <svg class="icon-arrow">
-                  <use xlink:href="images/sprite.svg#arrow"></use>
-                </svg>
-              </div>
-              <div class="handling-play" title="play">
-                <svg class="icon-play">
-                  <use xlink:href="images/sprite.svg#play"></use>
-                </svg>
-              </div>
-              <div class="handling-arrow" title="arrow">
-                <svg class="icon-arrow">
-                  <use xlink:href="images/sprite.svg#arrow"></use>
-                </svg>
-              </div>
           </div>
-
-          <div class="current"></div>
-
-          <div class="list">
-            <h2 class="list-title">All tracks</h2>
-
-            <div class="items">
-                <img src="images/beat1.jpg" alt="Track 1" class="track-image" />
-                <img src="images/beat2.jpg" alt="Track 2" class="track-image" />
-                <img src="images/beat3.jpg" alt="Track 3" class="track-image" />
-                <img src="images/beat4.jpg" alt="Track 4" class="track-image" />
-              </div>
+          <div class="main-control">
+            <div class="btn _previous">
+            </div>
+            <div class="btn _pause">
+            </div>
+            <div class="btn _next">
+            </div>
+            <div class="btn _timeline">
+              <span class="current-time">2:32</span>
+              <span class="timescope">
+                <span class="timescope-dot"></span>
+              </span>
+              <span class="end-time">4:00</span>
+            </div>
           </div>
         </div>
-      </main>
+        <ul class="player-list">
+          <li>
+            <img 
+              class="list-cover"
+              src="images/beat1.jpg"
+            />
+            <div class="list-info">
+              <div class="info-title">One Step At A Time</div>
+              <div class="info-artist">BEARSON</div>
+            </div>
+          </li>
+          <li>
+            <img 
+              class="list-cover"
+              src="images/beat2.jpg"
+            />
+            <div class="list-info">
+              <div class="info-title">Sunset Lover</div>
+              <div class="info-artist">PETIT BISCUIT</div>
+            </div>
+          </li>
+          <li>
+            <img 
+              class="list-cover"
+              src="images/beat3.jpg"
+            />
+            <div class="list-info">
+              <div class="info-title">Youth</div>
+              <div class="info-artist">TROYE SIVAN</div>
+            </div>
+          </li>
+          <li>
+            <img 
+              class="list-cover"
+              src="images/beat4.jpg"
+            />
+            <div class="list-info">
+              <div class="info-title">Working Girl</div>
+              <div class="info-artist">LITTLE BOOTS</div>
+            </div>
+          </li>
+        </ul>
     </div>
-
     <script type="module" src="js/main.js"></script>
   </body>
 </html>
