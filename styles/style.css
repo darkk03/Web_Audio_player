@@ -106,53 +106,6 @@ body {
   background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/329679/music-player-freebie-next.svg");
   background-size: auto 80%;
 }
-.main-control .btn._timeline {
-  vertical-align: middle;
-  height: auto;
-  width: auto;
-  opacity: 1;
-}
-.main-control .btn._timeline > span {
-  display: inline-block;
-  vertical-align: middle;
-  font-size: 12px;
-  color: #26107B;
-}
-.main-control .btn._timeline > span.timescope {
-  position: relative;
-  margin: auto 12px;
-  width: 180px;
-  height: 3px;
-  border-radius: 20px;
-}
-.main-control .btn._timeline > span.timescope:before, .main-control .btn._timeline > span.timescope:after,
-.main-control .btn._timeline > span.timescope .timescope-dot {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 0;
-  height: 100%;
-  background-color: #26107B;
-  cursor: pointer;
-  z-index: 1;
-}
-.main-control .btn._timeline > span.timescope:before {
-  width: 100%;
-  opacity: 0.2;
-}
-.main-control .btn._timeline > span.timescope:after {
-  width: 63%;
-}
-.main-control .btn._timeline > span.timescope .timescope-dot {
-  top: -2.5px;
-  left: 63%;
-  z-index: 3;
-  width: 8px;
-  height: 8px;
-  border-radius: 100%;
-}
 
 .player-list {
   margin: auto;

@@ -20,6 +20,8 @@
               <p>KYLE</p>
             </div>
           </div>
+
+          
           <div class="main-control">
             <div class="btn _previous">
             </div>
@@ -27,14 +29,20 @@
             </div>
             <div class="btn _next">
             </div>
-            <div class="btn _timeline">
-              <span class="current-time">2:32</span>
-              <span class="timescope">
-                <span class="timescope-dot"></span>
-              </span>
-              <span class="end-time">4:00</span>
+            <div class="btn music-box">
+              <input type="range" step="1" class="seekbar" value="0" min="0" max="100" oninput="handleSeekBar()">
+  
+              <audio class="music-element">
+                  <source src="https://hosseinghanbari.ir/other/music-player/autumn.mp3" type="audio/mp3">
+              </audio>
+              <span class="current-time">0:0</span><span class="duration">0:0</span>
             </div>
           </div>
+
+
+
+
+
         </div>
         <ul class="player-list">
           <li>
