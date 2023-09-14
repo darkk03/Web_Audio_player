@@ -31,7 +31,7 @@ body {
 }
 
 .main-current {
-  margin-bottom: 24px;
+  margin-bottom: 15px;
 
   .current-keyvisual {
     position: relative;
@@ -109,7 +109,7 @@ body {
     }
 
     &._music-box {
-      margin-top: 15px;
+      margin-top: 17px;
     }
   }
 }
@@ -138,12 +138,44 @@ input[type="range"]::-webkit-slider-thumb {
   box-shadow: -100vw 0 0 100vw #6eb6ff;
 }
 
+.music-box {
+  position: absolute;
+  left: 50%;
+  margin-top: 5px;
+  transform: translateX(-50%);
+
+  input[type="range"] {
+    height: 5px;
+    width: 340px;
+    margin: 0 0 10px 0;
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    height: 5px;
+    width: 7px;
+  }
+  .current-time {
+    position: absolute;
+    left: -35px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: #ffffff;
+  }
+  .duration {
+    position: absolute;
+    right: -35px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: #ffffff;
+  }
+}
+
 
 
 
 // Second Part
 .player-list {
-  margin: auto;
   min-width: 472px;
   padding: 24px;
   list-style: none;
@@ -154,7 +186,13 @@ input[type="range"]::-webkit-slider-thumb {
     cursor: pointer;
     
     .list-cover,
-    .list-info {
+    .list-info,
+    .list-duration,
+    .list-duration2,
+    .list-duration3,
+    .list-duration4,
+    .list-group,
+    .list-play {
       display: inline-block;
       vertical-align: middle;
 
@@ -163,6 +201,30 @@ input[type="range"]::-webkit-slider-thumb {
         width: 39px;
         height: auto;
         border-radius: 100%;
+      }
+
+      &.list-duration{
+        margin-left: 50px;
+      }
+
+      &.list-duration2{
+        margin-left: 84px;
+      }
+
+      &.list-duration3{
+        margin-left: 92px;
+      }
+
+      &.list-duration4{
+        margin-left: 88px;
+      }
+
+      &.list-group{
+        margin-left: 50px;
+      }
+
+      &.list-play{
+        margin-left: 50px;
       }
 
       &.list-info {
