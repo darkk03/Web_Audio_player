@@ -12,8 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const prevButton = document.querySelector("._previous");
   const shuffleButton = document.querySelector("._shuffle");
 
-  
-  let isShuffleOn = false; // Флаг состояния перемешивания
+
   var repIcon = document.querySelector('._repeat');
 
   let isMuted = false; // Объявляем флаг "mute" и устанавливаем его в false (звук не включен)
@@ -44,6 +43,65 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+
+
+
+
+
+  // let isShuffleOn = false; // Флаг состояния перемешивания
+
+  // shuffleButton.addEventListener("click", function () {
+  //   isShuffleOn = !isShuffleOn; // Инвертируем состояние перемешивания
+  //   if (isShuffleOn) {
+  //     // Если перемешивание включено, изменяем стиль кнопки
+  //     shuffleButton.classList.add("active");
+  
+  //     // Перемешиваем треки
+  //     audioFiles = shuffleArray(audioFiles);
+  //     // Обновляем информацию о текущем треке
+  //     updateTrackInfo();
+  //   } else {
+  //     // Если перемешивание выключено, снимаем стиль кнопки
+  //     shuffleButton.classList.remove("active");
+  //   }
+  // });
+  
+  // // Функция для перемешивания массива
+  // function shuffleArray(array) {
+  //   const shuffledArray = array.slice(); // Создаем копию исходного массива
+  //   for (let i = shuffledArray.length - 1; i > 0; i--) {
+  //     const j = Math.floor(Math.random() * (i + 1)); // Генерируем случайный индекс
+  //     [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]]; // Обмениваем элементы
+  //   }
+  //   return shuffledArray;
+  // }
+  
+  // nextButton.addEventListener("click", function () {
+  //   if (isShuffleOn) {
+  //     let randomIndex;
+  //     do {
+  //       randomIndex = Math.floor(Math.random() * audioFiles.length);
+  //     } while (randomIndex === currentTrack); // Гарантируем, что не выберется текущий трек
+  //     currentTrack = randomIndex;
+  //   } else {
+  //     currentTrack = (currentTrack + 1) % audioFiles.length;
+  //   }
+    
+  //   audio.src = audioFiles[currentTrack];
+  //   updateTrackInfo();
+  //   audio.play();
+  //   playPauseButton.src = "images/Pause.png";
+  //   isPlaying = true;
+  
+  //   // Обновляем иконку у треков в списке
+  //   playerList.forEach((button, index) => {
+  //     button.src = index === currentTrack ? "images/Pause.png" : "images/Play.png";
+  //   });
+  // });
+
+
+
+
   
 
   // Создаем массив с информацией о треках (название и исполнитель)
@@ -53,47 +111,6 @@ document.addEventListener("DOMContentLoaded", function () {
     { title: "Youth", artist: "TROYE SIVAN" },
     { title: "Working Girl", artist: "LITTLE BOOTS" }
   ];
-
-
-
-
-
-
-
-
-  shuffleButton.addEventListener("click", function () {
-    isShuffleOn = !isShuffleOn; // Инвертируем состояние перемешивания
-    if (isShuffleOn) {
-      // Если перемешивание включено, изменяем стиль кнопки
-      shuffleButton.classList.add("active");
-  
-      // Перемешиваем треки
-      audioFiles = shuffleArray(audioFiles);
-      // Обновляем информацию о текущем треке
-      updateTrackInfo();
-    } else {
-      // Если перемешивание выключено, снимаем стиль кнопки
-      shuffleButton.classList.remove("active");
-    }
-  });
-  
-  // Функция для перемешивания массива
-  function shuffleArray(array) {
-    const shuffledArray = array.slice(); // Создаем копию исходного массива
-    for (let i = shuffledArray.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1)); // Генерируем случайный индекс
-      [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]]; // Обмениваем элементы
-    }
-    return shuffledArray;
-  }
-  
-  
-
-
-
-
-  
-
 
   function handleRepeat() {
     if (audio.loop === true) {
@@ -107,15 +124,6 @@ document.addEventListener("DOMContentLoaded", function () {
   
   // Добавляем обработчик события для кнопки Repeat
   repIcon.addEventListener('click', handleRepeat);
-
-  
-
-
-
-
-
-
-
 
   // Функция для обновления времени трека
   function updateSeekBar() {
@@ -150,35 +158,35 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-// Обработчик события для кнопки Next
-nextButton.addEventListener("click", function () {
-  currentTrack = (currentTrack + 1) % audioFiles.length;
-  audio.src = audioFiles[currentTrack];
-  updateTrackInfo();
-  audio.play();
-  playPauseButton.src = "images/Pause.png";
-  isPlaying = true;
+  // Обработчик события для кнопки Next
+  nextButton.addEventListener("click", function () {
+    currentTrack = (currentTrack + 1) % audioFiles.length;
+    audio.src = audioFiles[currentTrack];
+    updateTrackInfo();
+    audio.play();
+    playPauseButton.src = "images/Pause.png";
+    isPlaying = true;
 
-  // Обновляем иконку у треков в списке
-  playerList.forEach((button, index) => {
-    button.src = index === currentTrack ? "images/Pause.png" : "images/Play.png";
+    // Обновляем иконку у треков в списке
+    playerList.forEach((button, index) => {
+      button.src = index === currentTrack ? "images/Pause.png" : "images/Play.png";
+    });
   });
-});
 
-// Обработчик события для кнопки Previous
-prevButton.addEventListener("click", function () {
-  currentTrack = (currentTrack - 1 + audioFiles.length) % audioFiles.length;
-  audio.src = audioFiles[currentTrack];
-  updateTrackInfo();
-  audio.play();
-  playPauseButton.src = "images/Pause.png";
-  isPlaying = true;
+  // Обработчик события для кнопки Previous
+  prevButton.addEventListener("click", function () {
+    currentTrack = (currentTrack - 1 + audioFiles.length) % audioFiles.length;
+    audio.src = audioFiles[currentTrack];
+    updateTrackInfo();
+    audio.play();
+    playPauseButton.src = "images/Pause.png";
+    isPlaying = true;
 
-  // Обновляем иконку у треков в списке
-  playerList.forEach((button, index) => {
-    button.src = index === currentTrack ? "images/Pause.png" : "images/Play.png";
+    // Обновляем иконку у треков в списке
+    playerList.forEach((button, index) => {
+      button.src = index === currentTrack ? "images/Pause.png" : "images/Play.png";
+    });
   });
-});
 
 
   // Обработчик события для ползунка seekbar
@@ -186,12 +194,6 @@ prevButton.addEventListener("click", function () {
     audio.currentTime = (seekbar.value / 100) * audio.duration;
     updateSeekBar();
   });
-
-
-
-
-
-
 
   // Функция для обновления иконки уровня громкости
   function updateVolumeIcon() {
@@ -227,33 +229,26 @@ prevButton.addEventListener("click", function () {
     handleSeekBarr(); // Обновляем уровень громкости аудиоплеера
   });
 
-
-
   // Назначаем обработчик изменений в ползунке
   seekbarr.addEventListener('input', handleSeekBarr);
 
   // Инициализируем иконку уровня громкости при загрузке страницы
   updateVolumeIcon();
 
-
-
-
-
-
-// Обработчик события для списка треков
-playerList.forEach((playButton, index) => {
-  playButton.addEventListener("click", function () {
-    if (currentTrack === index && isPlaying) {
-      // Если нажата иконка плей для текущего трека и трек воспроизводится, то останавливаем его
-      audio.pause();
-      isPlaying = false;
-    } else {
-      // Иначе, начинаем воспроизведение нового трека
-      currentTrack = index;
-      audio.src = audioFiles[currentTrack];
-      updateTrackInfo();
-      audio.play();
-      isPlaying = true;
+  // Обработчик события для списка треков
+  playerList.forEach((playButton, index) => {
+    playButton.addEventListener("click", function () {
+      if (currentTrack === index && isPlaying) {
+        // Если нажата иконка плей для текущего трека и трек воспроизводится, то останавливаем его
+        audio.pause();
+        isPlaying = false;
+      } else {
+        // Иначе, начинаем воспроизведение нового трека
+        currentTrack = index;
+        audio.src = audioFiles[currentTrack];
+        updateTrackInfo();
+        audio.play();
+        isPlaying = true;
     }
 
     // Обновляем иконку у треков в списке
@@ -262,9 +257,6 @@ playerList.forEach((playButton, index) => {
     });
   });
 });
-
-
-
 
   // Обновляем информацию о текущем треке
   updateTrackInfo();
