@@ -98,7 +98,15 @@ body {
 
     &._repeat {
       margin-right: 17px;
+    
+      &.active {
+        background-color: #007bff; // Новый цвет фона (голубой)
+        color: #007bff; // Цвет текста (белый)
+        transition: background-color 0.3s, color 0.3s; // Плавная анимация
+      }
     }
+
+
 
     &._shuffle {
       margin-right: 17px;
