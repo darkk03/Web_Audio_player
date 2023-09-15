@@ -87,12 +87,15 @@ body {
   margin-right: 17px;
 }
 .main-control .btn._repeat.active {
-  background-color: #007bff;
-  color: #007bff;
+  filter: brightness(0) saturate(100%) hue-rotate(180deg);
   transition: background-color 0.3s, color 0.3s;
 }
 .main-control .btn._shuffle {
   margin-right: 17px;
+}
+.main-control .btn._shuffle.active {
+  filter: brightness(0) saturate(100%) hue-rotate(180deg);
+  transition: background-color 0.3s, color 0.3s;
 }
 .main-control .btn._next {
   margin-right: 17px;

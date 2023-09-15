@@ -100,9 +100,8 @@ body {
       margin-right: 17px;
     
       &.active {
-        background-color: #007bff; // Новый цвет фона (голубой)
-        color: #007bff; // Цвет текста (белый)
-        transition: background-color 0.3s, color 0.3s; // Плавная анимация
+        filter: brightness(0) saturate(100%) hue-rotate(180deg);
+        transition: background-color 0.3s, color 0.3s;
       }
     }
 
@@ -110,7 +109,13 @@ body {
 
     &._shuffle {
       margin-right: 17px;
+
+      &.active {
+        filter: brightness(0) saturate(100%) hue-rotate(180deg);
+        transition: background-color 0.3s, color 0.3s;
+      }
     }
+
 
     &._next {
       margin-right: 17px;

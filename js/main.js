@@ -10,16 +10,21 @@ document.addEventListener("DOMContentLoaded", function () {
   const playerList = document.querySelectorAll(".list-play img");
   const nextButton = document.querySelector("._next");
   const prevButton = document.querySelector("._previous");
-  const repeatButton = document.querySelector("._repeat");
+  const shuffleButton = document.querySelector("._shuffle");
+
+  
+  let isShuffleOn = false; // Флаг состояния перемешивания
+  var repIcon = document.querySelector('._repeat');
+
   let isMuted = false; // Объявляем флаг "mute" и устанавливаем его в false (звук не включен)
   let previousVolume = 50; // Сохраняем предыдущее значение уровня громкости
-  let isRepeatOn = false; 
+
 
   let currentTrack = 0;
   let isPlaying = false;
 
   // Создаем массив с путями к аудиофайлам
-  const audioFiles = ["audio/beat1.mp3", "audio/beat2.mp3", "audio/beat3.mp3", "audio/beat4.mp3"];
+  let audioFiles = ["audio/beat1.mp3", "audio/beat2.mp3", "audio/beat3.mp3", "audio/beat4.mp3"];
 
   // Функция для обновления информации о треке
   function updateTrackInfo() {
@@ -49,28 +54,84 @@ document.addEventListener("DOMContentLoaded", function () {
     { title: "Working Girl", artist: "LITTLE BOOTS" }
   ];
 
-  repeatButton.addEventListener("click", function () {
-    isRepeatOn = !isRepeatOn; // Инвертируем состояние повтора
-    if (isRepeatOn) {
-      // Если повтор включен, изменяем стиль кнопки
-      repeatButton.classList.add("active");
+
+
+
+
+
+
+
+  shuffleButton.addEventListener("click", function () {
+    isShuffleOn = !isShuffleOn; // Инвертируем состояние перемешивания
+    if (isShuffleOn) {
+      // Если перемешивание включено, изменяем стиль кнопки
+      shuffleButton.classList.add("active");
+  
+      // Перемешиваем треки
+      audioFiles = shuffleArray(audioFiles);
+      // Обновляем информацию о текущем треке
+      updateTrackInfo();
     } else {
-      // Если повтор выключен, снимаем стиль кнопки
-      repeatButton.classList.remove("active");
+      // Если перемешивание выключено, снимаем стиль кнопки
+      shuffleButton.classList.remove("active");
     }
   });
   
-  // Обработчик события для завершения трека (при этом, если повтор включен, трек будет повторяться)
-  audio.addEventListener("ended", function () {
-    if (isRepeatOn) {
-      // Если повтор включен, воспроизводим текущий трек снова
-      audio.currentTime = 0; // Сбрасываем позицию трека в начало
-      audio.play();
-    } else {
-      // Если повтор выключен, переключаемся на следующий трек
-      nextButton.click();
+  // Функция для перемешивания массива
+  function shuffleArray(array) {
+    const shuffledArray = array.slice(); // Создаем копию исходного массива
+    for (let i = shuffledArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1)); // Генерируем случайный индекс
+      [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]]; // Обмениваем элементы
     }
+    return shuffledArray;
+  }
+  
+  nextButton.addEventListener("click", function () {
+    if (isShuffleOn) {
+      let randomIndex;
+      do {
+        randomIndex = Math.floor(Math.random() * audioFiles.length);
+      } while (randomIndex === currentTrack); // Гарантируем, что не выберется текущий трек
+      currentTrack = randomIndex;
+    } else {
+      currentTrack = (currentTrack + 1) % audioFiles.length;
+    }
+    
+    audio.src = audioFiles[currentTrack];
+    updateTrackInfo();
+    audio.play();
+    playPauseButton.src = "images/Pause.png";
+    isPlaying = true;
+  
+    // Обновляем иконку у треков в списке
+    playerList.forEach((button, index) => {
+      button.src = index === currentTrack ? "images/Pause.png" : "images/Play.png";
+    });
   });
+  
+
+
+
+
+  
+
+
+  function handleRepeat() {
+    if (audio.loop === true) {
+      audio.loop = false;
+      repIcon.classList.remove('active');
+    } else {
+      audio.loop = true;
+      repIcon.classList.add('active');
+    }
+  }
+  
+  // Добавляем обработчик события для кнопки Repeat
+  repIcon.addEventListener('click', handleRepeat);
+
+  
+
 
 
 
