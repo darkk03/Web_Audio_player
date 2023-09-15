@@ -87,28 +87,6 @@ document.addEventListener("DOMContentLoaded", function () {
     return shuffledArray;
   }
   
-  nextButton.addEventListener("click", function () {
-    if (isShuffleOn) {
-      let randomIndex;
-      do {
-        randomIndex = Math.floor(Math.random() * audioFiles.length);
-      } while (randomIndex === currentTrack); // Гарантируем, что не выберется текущий трек
-      currentTrack = randomIndex;
-    } else {
-      currentTrack = (currentTrack + 1) % audioFiles.length;
-    }
-    
-    audio.src = audioFiles[currentTrack];
-    updateTrackInfo();
-    audio.play();
-    playPauseButton.src = "images/Pause.png";
-    isPlaying = true;
-  
-    // Обновляем иконку у треков в списке
-    playerList.forEach((button, index) => {
-      button.src = index === currentTrack ? "images/Pause.png" : "images/Play.png";
-    });
-  });
   
 
 

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 body {
   margin: 0;
@@ -277,4 +278,25 @@ input[type=range]::-webkit-slider-thumb {
 }
 .player-list li:last-child {
   margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  body {
+    background: linear-gradient(180deg, #fff6e7 0%, #6192c4 100%);
+  }
+  .music-player {
+    width: 100%; /* Заполнить всю доступную ширину */
+    max-width: none; /* Убрать максимальную ширину */
+    margin: 0;
+    border-radius: 50px; /* Убрать скругление углов */
+  }
+  .player-main {
+    min-width: auto; /* Убрать минимальную ширину */
+  }
+  .main-control .btn._music-box {
+    margin-top: 14px;
+  }
+  .main-control .btn {
+    width: 20px;
+  }
 }/*# sourceMappingURL=style.css.map */
