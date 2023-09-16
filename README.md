@@ -1,4 +1,4 @@
-# Audio Player README
+# Audio Player
 
 ## Description
 
