@@ -96,26 +96,20 @@ body {
       margin-right: 17px;
     }
 
+    &._volume{
+      margin-right: 10px;
+    }
+
     &._repeat {
       margin-right: 17px;
+      margin-left: 17px;
+      
     
       &.active {
         filter: brightness(0) saturate(100%) hue-rotate(180deg);
         transition: background-color 0.3s, color 0.3s;
       }
     }
-
-
-
-    &._shuffle {
-      margin-right: 17px;
-
-      &.active {
-        filter: brightness(0) saturate(100%) hue-rotate(180deg);
-        transition: background-color 0.3s, color 0.3s;
-      }
-    }
-
 
     &._next {
       margin-right: 17px;
@@ -282,6 +276,38 @@ input[type="range"]::-webkit-slider-thumb {
 
   .main-control .btn {
     width: 20px;
+  }
+
+  .music-box input[type=range] {
+    width: 300px;
+  }
+
+  .player-list {
+    min-width: 200px;
+  }
+
+  .player-list li .list-cover.list-duration, .player-list li .list-info.list-duration, .player-list li .list-duration.list-duration, .player-list li .list-duration2.list-duration, .player-list li .list-duration3.list-duration, .player-list li .list-duration4.list-duration, .player-list li .list-group.list-duration, .player-list li .list-play.list-duration {
+    margin-left: 20px;
+  }
+
+  .player-list li .list-cover.list-duration2, .player-list li .list-info.list-duration2, .player-list li .list-duration.list-duration2, .player-list li .list-duration2.list-duration2, .player-list li .list-duration3.list-duration2, .player-list li .list-duration4.list-duration2, .player-list li .list-group.list-duration2, .player-list li .list-play.list-duration2 {
+    margin-left: 55px;
+  }
+
+  .player-list li .list-cover.list-duration3, .player-list li .list-info.list-duration3, .player-list li .list-duration.list-duration3, .player-list li .list-duration2.list-duration3, .player-list li .list-duration3.list-duration3, .player-list li .list-duration4.list-duration3, .player-list li .list-group.list-duration3, .player-list li .list-play.list-duration3 {
+    margin-left: 62px;
+  }
+
+  .player-list li .list-cover.list-duration4, .player-list li .list-info.list-duration4, .player-list li .list-duration.list-duration4, .player-list li .list-duration2.list-duration4, .player-list li .list-duration3.list-duration4, .player-list li .list-duration4.list-duration4, .player-list li .list-group.list-duration4, .player-list li .list-play.list-duration4 {
+    margin-left: 58px;
+  }
+
+  .player-list li .list-cover.list-group, .player-list li .list-info.list-group, .player-list li .list-duration.list-group, .player-list li .list-duration2.list-group, .player-list li .list-duration3.list-group, .player-list li .list-duration4.list-group, .player-list li .list-group.list-group, .player-list li .list-play.list-group {
+    margin-left: 40px;
+  }
+
+  .player-list li .list-cover.list-play, .player-list li .list-info.list-play, .player-list li .list-duration.list-play, .player-list li .list-duration2.list-play, .player-list li .list-duration3.list-play, .player-list li .list-duration4.list-play, .player-list li .list-group.list-play, .player-list li .list-play.list-play {
+    margin-left: 40px;
   }
 
 

@@ -41,69 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
     trackImage.src = "images/beat" + (currentTrack + 1) + ".jpg";
   }
 
-
-
-
-
-
-
-
-  // let isShuffleOn = false; // Флаг состояния перемешивания
-
-  // shuffleButton.addEventListener("click", function () {
-  //   isShuffleOn = !isShuffleOn; // Инвертируем состояние перемешивания
-  //   if (isShuffleOn) {
-  //     // Если перемешивание включено, изменяем стиль кнопки
-  //     shuffleButton.classList.add("active");
-  
-  //     // Перемешиваем треки
-  //     audioFiles = shuffleArray(audioFiles);
-  //     // Обновляем информацию о текущем треке
-  //     updateTrackInfo();
-  //   } else {
-  //     // Если перемешивание выключено, снимаем стиль кнопки
-  //     shuffleButton.classList.remove("active");
-  //   }
-  // });
-  
-  // // Функция для перемешивания массива
-  // function shuffleArray(array) {
-  //   const shuffledArray = array.slice(); // Создаем копию исходного массива
-  //   for (let i = shuffledArray.length - 1; i > 0; i--) {
-  //     const j = Math.floor(Math.random() * (i + 1)); // Генерируем случайный индекс
-  //     [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]]; // Обмениваем элементы
-  //   }
-  //   return shuffledArray;
-  // }
-  
-  // nextButton.addEventListener("click", function () {
-  //   if (isShuffleOn) {
-  //     let randomIndex;
-  //     do {
-  //       randomIndex = Math.floor(Math.random() * audioFiles.length);
-  //     } while (randomIndex === currentTrack); // Гарантируем, что не выберется текущий трек
-  //     currentTrack = randomIndex;
-  //   } else {
-  //     currentTrack = (currentTrack + 1) % audioFiles.length;
-  //   }
-    
-  //   audio.src = audioFiles[currentTrack];
-  //   updateTrackInfo();
-  //   audio.play();
-  //   playPauseButton.src = "images/Pause.png";
-  //   isPlaying = true;
-  
-  //   // Обновляем иконку у треков в списке
-  //   playerList.forEach((button, index) => {
-  //     button.src = index === currentTrack ? "images/Pause.png" : "images/Play.png";
-  //   });
-  // });
-
-
-
-
-  
-
   // Создаем массив с информацией о треках (название и исполнитель)
   const trackInfo = [
     { title: "One Step At A Time", artist: "BEARSON" },
