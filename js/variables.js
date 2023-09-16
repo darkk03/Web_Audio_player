@@ -1,0 +1,10 @@
+export const playPauseButton = document.getElementById("playPauseButton");
+export const volumeIcon = document.getElementById("volumeIcon");
+export const playerList = document.querySelectorAll(".list-play img");
+export const nextButton = document.querySelector("._next");
+export const prevButton = document.querySelector("._previous");
+export const seekbar = document.querySelector(".seekbar");
+export const seekbarr = document.querySelector(".seekbarr");
+export const currentTime = document.querySelector(".current-time");
+export const duration = document.querySelector(".duration");
+export const repIcon = document.querySelector('._repeat');
