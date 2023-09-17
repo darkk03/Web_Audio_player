@@ -4,6 +4,15 @@
 
 This audio player is a simple web application designed for playing music. It provides controls for managing the playback of music tracks, displays information about the current track, and allows you to select tracks from a playlist.
 
+<p align="center">Pc Version</p>
+
+![pcver](https://github.com/darkk03/Web_Audio_player/assets/89299212/04d3945c-1d91-4869-b943-c9e3a3986fc0)
+
+<p align="center">Phons Version</p>
+
+![phonever](https://github.com/darkk03/Web_Audio_player/assets/89299212/c2c2cb0f-1b18-4368-aba6-437f7477572b)
+
+
 ## Usage Instructions
 
 1. **Running the Application:**
